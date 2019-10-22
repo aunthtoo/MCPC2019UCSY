@@ -1,4 +1,4 @@
-# MCPC2019UCSY
+# 2019 Myanmar Collegiate Programming Contest
 Java Solutions for Problem B, D, E, G, H, I, J 
-By AWM
-You can contribute solutions for other. 
+<br>By AWM
+<br>You can contribute solutions for other. 
