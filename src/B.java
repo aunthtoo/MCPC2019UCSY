@@ -7,7 +7,7 @@ import java.util.Stack;
   where n is the length of the input
 */
 
-public class Main {
+public class B {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int T = sc.nextInt();
