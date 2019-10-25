@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
-/*Problem I: Hand Game*/
+/*Problem I: Hand Game
+  Time Complexity : O(n)
+  Space Complexity: O(1)
+  where n is the number of turns
+*/
 
 public class I {
 
