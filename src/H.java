@@ -1,7 +1,11 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-/*Problem H: Alphabet Frequency*/
+/*Problem H: Alphabet Frequency
+  Time Complexity : O(n)
+  Space Complexity: O(1)
+  where n is the length of string
+*/
 
 public class H {
 
@@ -9,11 +13,10 @@ public class H {
 
         Scanner sc = new Scanner(System.in);
 
-        while (true) {
-            int N = sc.nextInt();
-
-            if (N == 0)
-                break;
+        int N = sc.nextInt();
+        StringBuilder sb = new StringBuilder();
+        
+        while (N>0) {
 
             String S = sc.next();
 
@@ -22,28 +25,28 @@ public class H {
             for (int i = 0; i < 26; i++)
                 alphabets[i] = new Alphabet((char) (i + 'a'), 0);
 
-            for (int i = 0; i < N; i++) {
-                char ch = S.charAt(i);
-                Alphabet alphabet = alphabets[ch - 'a'];
-                alphabets[ch - 'a'] = new Alphabet(ch, alphabet.count + 1);
+            for (char ch: S.toCharArray()) {
+                alphabets[ch - 'a'].count++;
             }
 
             Arrays.sort(alphabets);
-
+            
             for (int i = 0; i < 26; i++) {
-                Alphabet alphabet = alphabets[i];
+                
+               Alphabet alphabet = alphabets[i];
 
                 if (alphabet.count > 0) {
 
                     for (int j = 0; j < alphabet.count; j++) {
-                        System.out.print(alphabet.ch);
+                        sb.append(alphabet.ch);
                     }
                 }
             }
 
-            System.out.println();
-
+            sb.append("\n");
+            N = sc.nextInt();
         }
+        System.out.println(sb.toString());
     }
 
     static class Alphabet implements Comparable<Alphabet> {
@@ -55,7 +58,7 @@ public class H {
             this.ch = ch;
             this.count = count;
         }
-
+        
         @Override
         public int compareTo(Alphabet o) {
             if (this.count < o.count)
