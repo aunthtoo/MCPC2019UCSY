@@ -1,30 +1,37 @@
 import java.util.HashSet;
 import java.util.Scanner;
 
-/*Problem E: ICPC University Ranking*/
-
+/*Problem E: ICPC University Ranking
+  Time Complexity : O(n)
+  Space Complexity: O(n)
+  where n is the total number of teams
+ */
 
 public class E {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
-        int N = Integer.parseInt(sc.nextLine());
+    int N = Integer.parseInt(sc.nextLine());
 
-        HashSet<String> unidata = new HashSet<>();
+    HashSet<String> unidata = new HashSet<>();
 
-        while (N-- > 0) {
+    while (N-- > 0) {
 
-            String str = sc.nextLine();
-            String uniname = str.split(" ")[0], teamname = str.substring(str.indexOf(" ") + 1);
+      String str = sc.nextLine();
 
-            if (!unidata.contains(uniname)) {
-                System.out.println(uniname + " " + teamname);
-                unidata.add(uniname);
-            }
+      int idx = str.indexOf(' ');
 
-        }
+      String uniname = str.substring(0, idx), teamname = str.substring(idx + 1);
+
+      if (!unidata.contains(uniname)) {
+        System.out.println(str);
+        unidata.add(uniname);
+      }
 
     }
+    
+    sc.close();
+  }
 }
